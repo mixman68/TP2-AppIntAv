@@ -43,20 +43,21 @@ public class NewsController {
     public String doCreateNews()
     {
         editedNews = new News();
-        return "createNews.xhtml";
+        return "createNews.xhtml?faces-redirect=true";
     }
     
     public String doAddNews() {
         editedNews.setDate(new Date());
         newsBean.createNews(editedNews);
-        return "index.xhtml";
+        return "index.xhtml?faces-redirect=true";
     }
     
     public String doShowNews(Long id) {
-        //FacesContext cts = FacesContext.getCurrentInstance();
+        FacesContext cts = FacesContext.getCurrentInstance();
+        
         //Long id = Long.parseLong(cts.getExternalContext().getRequestParameterMap().get("news"));
         editedNews = newsBean.getNews(id);
-        return "DetailsNews.xhtml";
+        return "DetailsNews.xhtml?faces-redirect=true";
     }
     
 }
