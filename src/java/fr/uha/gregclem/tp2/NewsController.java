@@ -52,9 +52,9 @@ public class NewsController {
         return "index.xhtml";
     }
     
-    public String doShowNews() {
-        FacesContext cts = FacesContext.getCurrentInstance();
-        Long id = Long.parseLong(cts.getExternalContext().getRequestParameterMap().get("news"));
+    public String doShowNews(Long id) {
+        //FacesContext cts = FacesContext.getCurrentInstance();
+        //Long id = Long.parseLong(cts.getExternalContext().getRequestParameterMap().get("news"));
         editedNews = newsBean.getNews(id);
         return "DetailsNews.xhtml";
     }
