@@ -6,6 +6,7 @@
 
 package fr.uha.gregclem.tp2;
 
+import java.util.List;
 import javax.ejb.Local;
 
 /**
@@ -14,5 +15,7 @@ import javax.ejb.Local;
  */
 @Local
 public interface NewsBeanLocal {
-    
+    List<News> listAllNews();
+    News createNews(News news);
+    News getNews(Long id);
 }
