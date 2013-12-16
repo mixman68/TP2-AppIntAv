@@ -8,10 +8,13 @@ package fr.uha.gregclem.tp2;
 
 import java.io.Serializable;
 import java.util.Date;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 /**
  *
@@ -24,7 +27,11 @@ public class News implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     
+    @Temporal(TemporalType.DATE)
+    @Column(name="NDATE")
     private Date date;
+    
+    @Column(nullable = false)
     private String title;
     private String content;
     private String author;
